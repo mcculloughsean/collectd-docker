@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/fsouza/go-dockerclient"
-	"github.com/mccullough/collectd-docker/collector"
+	"github.com/mcculloughsean/collectd-docker/collector"
 	"path"
 )
 
