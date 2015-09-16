@@ -5,8 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/bobrik/collectd-docker/collector"
 	"github.com/fsouza/go-dockerclient"
+	"github.com/mccullough/collectd-docker/collector"
 	"path"
 )
 
