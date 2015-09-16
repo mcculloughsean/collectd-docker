@@ -38,7 +38,7 @@ func main() {
 	writer := collector.NewCollectdWriter(*h, os.Stdout)
 
 	collector := collector.NewCollector(client, writer, *i)
-
+	log.Println("Starting")
 	err = collector.Run(5)
 	if err != nil {
 		log.Fatal(err)

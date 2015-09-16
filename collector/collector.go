@@ -55,6 +55,7 @@ func (c *Collector) Run(interval int) error {
 	}
 
 	for _, container := range containers {
+		log.Printf("starting collector for container %s\n", container.ID)
 		go c.handle(container.ID)
 	}
 
@@ -70,6 +71,7 @@ func (c *Collector) Run(interval int) error {
 
 func (c *Collector) handle(id string) {
 	m, err := NewMonitor(c.client, id, c.interval)
+	log.Println("Error? %e", err)
 	if err != nil {
 		if err == ErrNoNeedToMonitor {
 			return

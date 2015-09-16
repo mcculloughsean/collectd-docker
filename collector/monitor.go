@@ -2,6 +2,7 @@ package collector
 
 import (
 	"errors"
+	"log"
 	"strings"
 
 	"github.com/fsouza/go-dockerclient"
@@ -79,6 +80,7 @@ func (m *Monitor) handle(ch chan<- Stats) error {
 				Stats: *s,
 			}
 
+			log.Println("Polling for %s %s", m.app, m.task)
 			i++
 		}
 	}()
